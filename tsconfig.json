@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
-        "declaration": true,
+        "baseUrl": "./src",
         "pretty": true,
         "skipLibCheck": true,
         "removeComments": true,
@@ -10,8 +9,8 @@
         "strict": true,
         "lib": ["ESNEXT", "DOM"],
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./*"]
         }
     },
-    "exclude": ["node_modules", "dist", "templates", "website"]
+    "exclude": ["node_modules", "dist", "templates", "website", "types"]
 }
