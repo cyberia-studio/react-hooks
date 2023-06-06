@@ -1,0 +1,10 @@
+{
+    "singleQuote": true,
+    "tabWidth": 4,
+    "printWidth": 130,
+    "semicolons": true,
+    "semi": true,
+    "endOfLine": "auto",
+    "bracketSpacing": true,
+    "indent": "off"
+}

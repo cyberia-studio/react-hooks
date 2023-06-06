@@ -1,0 +1,28 @@
+{
+    "extends": ["plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
+    "plugins": ["prettier", "@typescript-eslint", "simple-import-sort", "import"],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "react/display-name": "off",
+        "no-console": "warn",
+        "indent": "off",
+        "no-trailing-spaces": "warn",
+        "no-extra-semi": "error",
+        "semi": ["error", "always"],
+        "react-hooks/exhaustive-deps": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "react/jsx-props-no-spreading": 0,
+        "@typescript-eslint/ban-types": [
+            "error",
+            {
+                "types": {
+                    "Function": false
+                },
+                "extendDefaults": true
+            }
+        ]
+    }
+}

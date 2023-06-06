@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.json",
+
+    "compilerOptions": {
+        "rootDir": ".",
+        "moduleResolution": "node",
+        "isolatedModules": true,
+        // Needed for CommonJS modules
+        "allowSyntheticDefaultImports": true,
+        "outDir": "./dist"
+    },
+
+    "include": ["./src/**/*"],
+    "exclude": ["./src/**/*.test.ts", "./src/**/*.mdx", "./src/**/*.demo.tsx"]
+}
