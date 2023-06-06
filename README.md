@@ -10,11 +10,12 @@ import {
     useObjectEffect,
     useObjectMemo,
     useOutside,
-    useParams,
     usePromiseState,
+    useRefEffect,
+    useRefReady,
     useTrustedPromise,
     useTrustedState,
-} from '@fipnooone/hooks';
+} from '@cyberia-studio/react-hooks';
 ```
 
 ## useState
@@ -22,7 +23,7 @@ import {
 ### useTrustedState
 
 ```typescript
-const [state, setState, isTrusted] = useTrustedState('defaultValue', true);
+const [state, setState, isTrusted] = useTrustedState('defaultValue', isTrustedDefault);
 const [state, setState, isTrusted] = useTrustedState();
 ```
 
@@ -52,22 +53,10 @@ const changeState = () =>
 ```typescript
 const [state, setState] = useTrustedPromise<number>();
 
-const changeState = () => setState(undefined).then();
-```
-
-## useParams
-
-```typescript
-const { id, station_slug } = useParams({ id: 'int', station_slug: 'string' });
-// id: number
-// station_slug: string
-
-// redirect is true by refault
-useParams({ }, redirect: boolean | '/url/to/a-page');
-
-const { id, station_slug } = useParams({ id: 'int', station_slug: 'string' }, false);
-// id: number | undefined
-// station_slug: string | undefined
+const changeState = () =>
+    setState(undefined).then(() => {
+        // ...
+    });
 ```
 
 ## useObject
@@ -96,12 +85,10 @@ useOutside(myRef, () => close(), [dep]);
 useEvents(
     'click',
     (event) => {
-        while (true) {
-            console.log('clicked');
-        }
+        if (!isOpen) // ...
     },
-    [dep0, dep1],
-    document
+    document,
+    [isOpen]
 );
 ```
 
@@ -116,5 +103,7 @@ useRefEffect((T) => {}, ref<T>, [dep]);
 ### useEvents
 
 ```typescript
-useRefReady((T) => {}, ref<T>);
+const myRef = useRefReady((T) => {}, ref<T>);
+
+return <div ref={myRef.set}></div>;
 ```
