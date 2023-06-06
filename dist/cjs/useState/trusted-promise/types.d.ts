@@ -1,4 +1,4 @@
-import { StateValue } from '@/types';
+import { StateValue } from '../../types';
 export interface ISet<T> {
     (value: StateValue<T>, isTrusted?: boolean): Promise<T>;
 }

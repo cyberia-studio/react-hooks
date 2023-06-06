@@ -1,4 +1,4 @@
-import { Destructor } from '@/types';
+import { Destructor } from '../../types';
 type Callback<T> = (ref: T) => Destructor;
 interface ISetRef<T> {
     (ref: T): void;

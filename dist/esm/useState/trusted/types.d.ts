@@ -1,4 +1,4 @@
-import { StateValue } from '@/types';
+import { StateValue } from '../../types';
 export interface TrustedValue<T> {
     value: T;
     isTrusted: boolean;

@@ -1,5 +1,5 @@
 {
-    "name": "react-hooks",
+    "name": "@cyberia-studio/react-hooks",
     "description": "React hooks collection",
     "version": "1.0.0",
     "license": "MIT",
@@ -54,8 +54,8 @@
     ],
     "scripts": {
         "build": "npm run build:cjs && npm run build:esm",
-        "build:cjs": "tsc -p tsconfig.build.json --module commonjs --outDir dist/cjs --target es5",
-        "build:esm": "tsc -p tsconfig.build.json --module esNext --outDir dist/esm --target es6",
+        "build:cjs": "tsc -project tsconfig.build.json --module commonjs --outDir dist/cjs --target es5 && tsc-alias -p tsconfig.build.json --outDir dist/cjs",
+        "build:esm": "tsc -project tsconfig.build.json --module esNext --outDir dist/esm --target es6 && tsc-alias -p tsconfig.build.json --outDir dist/esm",
         "publish": "npm publish --access public",
         "lint": "eslint '**/*.{js,jsx,ts,tsx}'"
     }

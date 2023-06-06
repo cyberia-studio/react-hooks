@@ -1,4 +1,4 @@
-import { StateValue } from '@/types';
+import { StateValue } from '../../types';
 export type Callback<T> = (state: T) => void;
 export interface ISetCallbackValue<T> {
     (value: StateValue<T>, callback?: Callback<T>): void;

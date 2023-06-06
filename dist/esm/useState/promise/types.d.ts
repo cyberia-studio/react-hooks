@@ -1,4 +1,4 @@
-import { StateValue } from '@/types';
+import { StateValue } from '../../types';
 export interface ISetPromiseValue<T> {
     (value: StateValue<T>): Promise<T>;
 }
