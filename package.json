@@ -1,7 +1,7 @@
 {
     "name": "@cyberia-studio/react-hooks",
     "description": "React hooks collection",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "MIT",
     "keywords": [
         "typescript",
