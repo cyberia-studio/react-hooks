@@ -100,10 +100,10 @@ useEvents(
 useRefEffect((T) => {}, ref<T>, [dep]);
 ```
 
-### useEvents
+### useRefReady
 
 ```typescript
-const myRef = useRefReady((T) => {}, ref<T>);
+const myRef = useRefReady((T) => {});
 
 return <div ref={myRef.set}></div>;
 ```
