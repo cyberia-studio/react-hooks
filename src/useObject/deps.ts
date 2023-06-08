@@ -1,13 +1,12 @@
 type KnownTypes = string | number | boolean | null | undefined;
 
-export const stringify = <T>(deps: T): T extends ReadonlyArray<unknown> | Array<unknown> ? KnownTypes[] : KnownTypes => {
-    type Result = T extends ReadonlyArray<unknown> | Array<unknown> ? KnownTypes[] : KnownTypes;
+export const stringify = <T>(deps: T): KnownTypes => {
 
     const seen = new WeakSet();
 
-    if (deps === null || typeof deps !== 'object') return deps as Result;
+    if (deps === null || typeof deps !== 'object') return deps as KnownTypes;
 
-    if (Array.isArray(deps)) return JSON.stringify(deps.map(stringify)) as Result;
+    if (Array.isArray(deps)) return JSON.stringify(deps.map(stringify));
 
     return JSON.stringify(deps, (_, value) => {
         if (typeof value !== 'object' || value === null) return value;
@@ -17,5 +16,5 @@ export const stringify = <T>(deps: T): T extends ReadonlyArray<unknown> | Array<
         seen.add(value);
 
         return value;
-    }) as Result;
+    });
 };
